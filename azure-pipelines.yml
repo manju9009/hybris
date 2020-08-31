@@ -10,7 +10,8 @@ resources:
     name: manju9009/hybris
   - repository: hybrissource
     type: github
-    endpoint: manju9009/hybrissource
+    endpoint: manju9009
+    name: manju9009/hybrissource
 
 trigger:
 - master
