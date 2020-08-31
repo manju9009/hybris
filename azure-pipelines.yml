@@ -6,8 +6,7 @@ resources:
   repositories:
   - repository: hybris
     type: github
-  - repository: hybrissource
-    type: github
+
 
 trigger:
 - master
@@ -24,7 +23,7 @@ steps:
 - task: CopyFiles@1
   displayName: 'Copy Files to: hybris/bin/custom'
   inputs:
-    SourceFolder: hybrissource/custom
+    SourceFolder: hybris/config
     TargetFolder: hybris/bin/custom
 - task: ArchiveFiles@2
   displayName: 'Archive $(Build.BinariesDirectory)'
