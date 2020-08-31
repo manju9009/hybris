@@ -29,7 +29,7 @@ steps:
 - task: CopyFiles@1
   displayName: 'Copy Files to: hybris/bin/custom'
   inputs:
-    SourceFolder: hybrissource/config
+    SourceFolder: hybrissource/custom
     TargetFolder: hybris/bin/custom
 
 - script: echo $(Build.SourcesDirectory)
