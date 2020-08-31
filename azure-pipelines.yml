@@ -2,11 +2,6 @@
 # Start with a minimal pipeline that you can customize to build and deploy your code.
 # Add steps that build, run tests, deploy, and more:
 # https://aka.ms/yaml
-resources:
-  repositories:
-  - repository: hybris
-    type: github
-    endpoint: manju9009
 
 
 trigger:
@@ -19,8 +14,7 @@ steps:
 - script: echo Hello, world!
   displayName: 'Run a one-line script'
 
-- checkout: hybris
-- checkout: hybrissource
+- checkout: git://manju9009/hybris
 - task: CopyFiles@1
   displayName: 'Copy Files to: hybris/bin/custom'
   inputs:
