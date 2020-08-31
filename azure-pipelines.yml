@@ -6,6 +6,7 @@ resources:
   repositories:
   - repository: hybris
     type: github
+    endpoint: manju9009
 
 
 trigger:
