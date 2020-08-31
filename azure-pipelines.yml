@@ -1,0 +1,30 @@
+# Starter pipeline
+# Start with a minimal pipeline that you can customize to build and deploy your code.
+# Add steps that build, run tests, deploy, and more:
+# https://aka.ms/yaml
+resources:
+  repositories:
+  - repository: hybris
+    type: github
+  - repository: hybrissource
+    type: github
+
+trigger:
+- master
+
+pool:
+  vmImage: 'ubuntu-latest'
+
+steps:
+- script: echo Hello, world!
+  displayName: 'Run a one-line script'
+
+- checkout: hybris
+- checkout: hybrissource
+- task: CopyFiles@1
+  displayName: 'Copy Files to: hybris/bin/custom'
+  inputs:
+    SourceFolder: hybrissource/custom
+    TargetFolder: hybris/bin/custom
+- task: ArchiveFiles@2
+  displayName: 'Archive $(Build.BinariesDirectory)'
